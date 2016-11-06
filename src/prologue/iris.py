@@ -6,7 +6,7 @@ from sklearn import tree
 
 #import pdf graphing
 from sklearn.externals.six import StringIO
-import pydot
+import pydotplus
 
 iris = load_iris()
 
@@ -48,5 +48,5 @@ tree.export_graphviz(clf,
                         filled=True, rounded=True,
                         impurity=False
                     )
-graph = pydot.graph_from_dot_data(dot_data.getValue())
+graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_pdf("iris.pdf")
